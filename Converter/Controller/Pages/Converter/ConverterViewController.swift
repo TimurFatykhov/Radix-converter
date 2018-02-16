@@ -5,6 +5,9 @@
 //  Created by Тимур Фатыхов on 05/02/2018.
 //  Copyright © 2018 Fatykhov&Suslov. All rights reserved.
 //
+//  Developers:
+//  Timur Fatykhov
+//  Sergei Kononov
 
 import UIKit
 import RealmSwift
@@ -33,7 +36,7 @@ class ConverterViewController: UIViewController {
             return
         }
         do {
-            let result = try NumberConverter.convert(number: numberTextField.text!, srcBase: Int(srcBaseTextField.text!)!, dstBase: Int(dstBaseTextField.text!)!)
+            let result = try NumberConverter.convert(number: numberTextField.text!, fromBase: Int(srcBaseTextField.text!)!, toBase: Int(dstBaseTextField.text!)!)
             resultTextLabel.text = String(result)
             let convertion = Convertion(srcNumber: numberTextField.text!, dstNumber: result, srcBase: Int(srcBaseTextField.text!)!, dstBase: Int(dstBaseTextField.text!)!, date: Date())
 
@@ -42,11 +45,14 @@ class ConverterViewController: UIViewController {
             }
             
 
-        } catch ConvertionErrors.couldNotConvert {
-            resultTextLabel.text = "could not convert"
-        } catch ConvertionErrors.wrongBase {
-            resultTextLabel.text = "wrong base"
-        } catch {
+        } catch ConvertionErrors.muchDots {
+            resultTextLabel.text = "Much dots"
+        } catch ConvertionErrors.incorrectCharacters {
+            resultTextLabel.text = "Incorrect number"
+        } catch ConvertionErrors.incorrectBase{
+            resultTextLabel.text = "Incorrect base"
+        }
+        catch {
             resultTextLabel.text = "some error occurred"
         }
     }
