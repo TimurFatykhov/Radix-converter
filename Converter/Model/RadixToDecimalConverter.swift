@@ -46,6 +46,12 @@ class RadixToDecimalConverter {
     
     public static func convert(number: String, fromBase base: Int) -> Double {
         
+        var checkMinus:Bool = false
+        if (number.first == "-") {
+            checkMinus = true
+        }
+        var number = number
+        number = number.replacingOccurrences(of: "-", with: "")
         let length:Int = number.count
         var power:Int = 1
         var result:Double = 0.0
@@ -58,6 +64,9 @@ class RadixToDecimalConverter {
             
             result += Double(CharToNumber(character: number[index]) * power)
             power*=base
+        }
+        if checkMinus == true {
+            return -result
         }
         return result
     }
