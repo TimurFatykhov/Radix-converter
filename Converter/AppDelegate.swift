@@ -3,7 +3,7 @@
 //  Converter
 //
 //  Created by Тимур Фатыхов on 05/02/2018.
-//  Copyright © 2018 Fatykhov&Suslov. All rights reserved.
+//  Copyright © 2018 Fatykhov&Kononov. All rights reserved.
 //
 //  Developers:
 //  Timur Fatykhov

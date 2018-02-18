@@ -50,7 +50,25 @@ class RadixToDecimalConverter {
         if (number.first == "-") {
             checkMinus = true
         }
-        var number = number
+        
+        // Split number into integer and fractional parts
+        
+        var splitNumber = number.split(separator: ".", maxSplits: 2, omittingEmptySubsequences: false)
+        var integerPart = ""
+        var fractionalPart = ""
+        
+        if (splitNumber.count == 2) {
+            integerPart = String(splitNumber[0])
+            fractionalPart = String(splitNumber[1])
+        }
+        else {
+            integerPart = String(splitNumber[0])
+        }
+        
+
+        
+        // Convert integer part
+        var number = integerPart
         number = number.replacingOccurrences(of: "-", with: "")
         let length:Int = number.count
         var power:Int = 1
@@ -65,6 +83,17 @@ class RadixToDecimalConverter {
             result += Double(CharToNumber(character: number[index]) * power)
             power*=base
         }
+        
+        // Convert integer part
+        if fractionalPart != "" {
+        number = fractionalPart
+        for index in stride(from: 0, through: length-1, by: 1) {
+            var degree = pow(Double(base), Double(-index-1))
+            result += Double(CharToNumber(character: number[index])) * degree
+        }
+        }
+        
+        
         if checkMinus == true {
             return -result
         }
