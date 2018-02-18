@@ -3,7 +3,7 @@
 //  Converter
 //
 //  Created by Тимур Фатыхов on 15/02/2018.
-//  Copyright © 2018 Fatykhov&Suslov. All rights reserved.
+//  Copyright © 2018 Fatykhov&Kononov. All rights reserved.
 //
 //  Developers:
 //  Timur Fatykhov
@@ -41,7 +41,7 @@ class NumberConverter
                     return String(RadixToDecimalConverter.convert(number: number, fromBase: from))
                 case let(from, to):
                     let decimal = RadixToDecimalConverter.convert(number: number, fromBase: from)
-                    return DecimalToRadixConverter.convert(number: decimal, toBase: to, accuracy: 2)// hardCode here!!!!
+                    return DecimalToRadixConverter.convert(number: decimal, toBase: to, accuracy: 4)// hardCode here!!!!
                 }
             }else{
                 throw ConvertionErrors.muchDots
