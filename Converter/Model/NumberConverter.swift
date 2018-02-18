@@ -23,11 +23,22 @@ class NumberConverter
     private static let onlyDotSet : CharacterSet = ["."]
     private static let correctBaseRange : Range = 0..<17
     
+    private static func log(value val : Double, base : Int) -> Double
+    {
+        return log2(val) / log2(Double(base))
+    }
+    
     public static func convert(number: String, fromBase srcBase: Int, toBase dstBase: Int) throws -> String
     {
         if (!correctBaseRange.contains(srcBase) && correctBaseRange.contains(dstBase)){
             throw ConvertionErrors.incorrectBase
         }
+        
+        var realPartSize : Double = 0
+        if let dotIndex = number.index(of: "."){
+            realPartSize = Double(number.distance(from: dotIndex, to: number.endIndex) - 1)
+        }
+        print("\(number) -> \(realPartSize)")
         
         if (number.rangeOfCharacter(from: correctSet.inverted) == nil){
             if (number.components(separatedBy: onlyDotSet).count <= 2){
@@ -36,12 +47,18 @@ class NumberConverter
                 case let (from, to) where from == to:
                     return number
                 case (10, let to):
-                    return DecimalToRadixConverter.convert(number: Double(number)!, toBase: to, accuracy: 2) // hardCode here!!!!
+                    let accuracy = realPartSize * log(value: 10, base: to) + 0.5
+                    print(Int(round(accuracy)))
+                    return DecimalToRadixConverter.convert(number: Double(number)!, toBase: to, accuracy: Int(round(accuracy))) // hardCode here!!!!
                 case (let from, 10):
                     return String(RadixToDecimalConverter.convert(number: number, fromBase: from))
                 case let(from, to):
+                    var accuracy = realPartSize * log(value: Double(from), base: 10) + 0.5
                     let decimal = RadixToDecimalConverter.convert(number: number, fromBase: from)
-                    return DecimalToRadixConverter.convert(number: decimal, toBase: to, accuracy: 4)// hardCode here!!!!
+                    print(Int(round(accuracy)))
+                    accuracy = realPartSize * log(value: 10, base: to) + 0.5
+                    print(Int(round(accuracy)))
+                    return DecimalToRadixConverter.convert(number: decimal, toBase: to, accuracy: Int(round(accuracy)))// hardCode here!!!!
                 }
             }else{
                 throw ConvertionErrors.muchDots
