@@ -18,11 +18,16 @@ class ConverterViewController: UIViewController {
     @IBOutlet weak var srcBaseTextField: UITextField!
     @IBOutlet weak var dstBaseTextField: UITextField!
     @IBOutlet weak var menuButton: UIBarButtonItem!
+    @IBOutlet weak var convertButton: UIButton!
     let realm = try!Realm()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        convertButton.layer.cornerRadius = 10
+        convertButton.layer.borderWidth = 1
+        convertButton.layer.borderColor = UIColor.white.cgColor
+        
         if self.revealViewController() != nil
             {
             menuButton.target = self.revealViewController()

@@ -63,6 +63,9 @@ class DecimalToRadixConverter {
     
     //Convert fractional number in decimal to P radix
     public static func frac_to_P(number:Double, base:Int, correctness: Int) -> String {
+        if correctness == 0{
+            return " "
+        }
         let number:Double = Double(abs(number))
         let numberOfPlaces:Double = Double(correctness)
         let powerOfTen:Double = pow(10.0, numberOfPlaces)

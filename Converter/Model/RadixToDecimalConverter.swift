@@ -37,13 +37,6 @@ class RadixToDecimalConverter {
         return value
     }
     
-    private static func convert(number: String, fromBbase: Int, weight: Double) -> Double {
-        
-        
-        
-        return 0.0
-    }
-    
     public static func convert(number: String, fromBase base: Int) -> Double {
         
         var checkMinus:Bool = false
@@ -84,7 +77,7 @@ class RadixToDecimalConverter {
             power*=base
         }
         
-        // Convert integer part
+        // Convert fractional part
         if fractionalPart != "" {
         number = fractionalPart
         let length:Int = number.count
