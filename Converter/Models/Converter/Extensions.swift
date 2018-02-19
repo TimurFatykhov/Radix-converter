@@ -27,3 +27,18 @@ extension String {
         return String(self[i] as Character)
     }
 }
+
+extension UIViewController
+{
+    func hideKeyboardWhenTappedAround()
+    {
+        let tap = UITapGestureRecognizer(target: self, action: #selector (self.hideKeyboard))
+        tap.cancelsTouchesInView = true
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func hideKeyboard()
+    {
+        view.endEditing(true)
+    }
+}
