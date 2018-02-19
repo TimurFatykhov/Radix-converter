@@ -12,7 +12,7 @@
 import UIKit
 import RealmSwift
 
-class ConverterViewController: UIViewController {
+class ConverterViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var resultTextLabel: UILabel!
     @IBOutlet weak var numberTextField: UITextField!
     @IBOutlet weak var srcBaseTextField: UITextField!
@@ -23,6 +23,11 @@ class ConverterViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.hideKeyboardWhenTappedAround()
+        numberTextField.delegate = self
+        srcBaseTextField.delegate = self
+        dstBaseTextField.delegate = self
         
         convertButton.layer.cornerRadius = 10
         convertButton.layer.borderWidth = 1
@@ -60,5 +65,21 @@ class ConverterViewController: UIViewController {
         catch {
             resultTextLabel.text = "some error occurred"
         }
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool{
+        switch textField{
+        case numberTextField:
+            srcBaseTextField.becomeFirstResponder()
+            
+        case srcBaseTextField:
+            dstBaseTextField.becomeFirstResponder()
+            
+        case dstBaseTextField:
+            hideKeyboard()
+        default:
+            break
+        }
+        return false
     }
 }
