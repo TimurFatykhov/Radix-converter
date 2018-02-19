@@ -5,6 +5,10 @@
 //  Created by Sergey Suslov on 06/02/2018.
 //  Copyright © 2018 Fatykhov&Suslov. All rights reserved.
 //
+//  Developers:
+//  Timur Fatykhov
+//  Sergei Kononov
+
 import UIKit
 import Realm
 import RealmSwift

@@ -5,6 +5,9 @@
 //  Created by Тимур Фатыхов on 07/02/2018.
 //  Copyright © 2018 Fatykhov&Suslov. All rights reserved.
 //
+//  Developers:
+//  Timur Fatykhov
+//  Sergei Kononov
 
 import UIKit
 
