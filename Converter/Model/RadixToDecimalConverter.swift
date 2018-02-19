@@ -82,7 +82,7 @@ class RadixToDecimalConverter {
         number = fractionalPart
         let length:Int = number.count
         for index in stride(from: 0, through: length-1, by: 1) {
-            var degree = pow(Double(base), Double(-index-1))
+            let degree = pow(Double(base), Double(-index-1))
             result += Double(CharToNumber(character: number[index])) * degree
         }
         }

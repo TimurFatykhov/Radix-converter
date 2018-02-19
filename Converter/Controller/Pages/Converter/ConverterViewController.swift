@@ -52,7 +52,7 @@ class ConverterViewController: UIViewController {
 
         } catch ConvertionErrors.muchDots {
             resultTextLabel.text = "Much dots"
-        } catch ConvertionErrors.incorrectCharacters {
+        } catch ConvertionErrors.incorrectNumbers {
             resultTextLabel.text = "Incorrect number"
         } catch ConvertionErrors.incorrectBase{
             resultTextLabel.text = "Incorrect base"
