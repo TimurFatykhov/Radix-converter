@@ -25,4 +25,5 @@ xcuserdata/
 !*.xcodeproj/project.pbxproj
 !*.xcodeproj/xcshareddata/
 !*.xcworkspace/contents.xcworkspacedata
+!*.xcworkspace/xcuserdata
 /*.gcno

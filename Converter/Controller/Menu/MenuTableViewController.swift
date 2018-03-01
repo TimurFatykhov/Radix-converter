@@ -27,7 +27,7 @@ class MenuTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 3
+        return 4
     }
     
     
@@ -58,6 +58,14 @@ class MenuTableViewController: UITableViewController {
         } else{
             return tableView.dequeueReusableCell(withIdentifier: "aboutCell", for: indexPath)
         }
+            
+        case 3: if let cell = tableView.dequeueReusableCell(withIdentifier: "calcCell", for: indexPath) as? CalcTableViewCell{
+            cell.iconImage.image = #imageLiteral(resourceName: "orion_about.png");
+            cell.titleLabel.text = "Fractional Calculator";
+            return cell;
+        } else{
+            return tableView.dequeueReusableCell(withIdentifier: "calcCell", for: indexPath)
+            }
             
         default: return tableView.dequeueReusableCell(withIdentifier: "convertCell", for: indexPath);
         }

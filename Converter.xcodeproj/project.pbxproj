@@ -38,6 +38,10 @@
 		40BCF8302028D70B006B0879 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40BCF8322028D70B006B0879 /* RealmSwift.framework */; };
 		5532F91CDFE596D0BD7DB93F /* Pods_ConverterUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAE53A7017DC69D5063F905B /* Pods_ConverterUITests.framework */; };
 		7A5DA495E17C6DE51193D55F /* Pods_Converter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0B37844674B0ACAFC1B3705 /* Pods_Converter.framework */; };
+		857BB151204862E100E2C201 /* FractionalCalcViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857BB150204862E100E2C201 /* FractionalCalcViewController.swift */; };
+		857BB1532048651700E2C201 /* CalcTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857BB1522048651700E2C201 /* CalcTableViewCell.swift */; };
+		857BB15520486A6200E2C201 /* FractionClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857BB15420486A6200E2C201 /* FractionClass.swift */; };
+		857BB1572048718100E2C201 /* Digits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857BB1562048718100E2C201 /* Digits.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,6 +109,10 @@
 		40BCF8322028D70B006B0879 /* RealmSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6951C8B2BB84629C93595A67 /* Pods-Converter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Converter.release.xcconfig"; path = "Pods/Target Support Files/Pods-Converter/Pods-Converter.release.xcconfig"; sourceTree = "<group>"; };
 		82E6B46B78383A8D6E617576 /* Pods-ConverterTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConverterTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ConverterTests/Pods-ConverterTests.debug.xcconfig"; sourceTree = "<group>"; };
+		857BB150204862E100E2C201 /* FractionalCalcViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FractionalCalcViewController.swift; sourceTree = "<group>"; };
+		857BB1522048651700E2C201 /* CalcTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalcTableViewCell.swift; sourceTree = "<group>"; };
+		857BB15420486A6200E2C201 /* FractionClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FractionClass.swift; sourceTree = "<group>"; };
+		857BB1562048718100E2C201 /* Digits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Digits.swift; sourceTree = "<group>"; };
 		A0B37844674B0ACAFC1B3705 /* Pods_Converter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Converter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4B815ADA6BF73655BBF35B1 /* Pods_ConverterTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ConverterTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B563BC9FFAFC70D75CAFB9AB /* Pods-ConverterUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConverterUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ConverterUITests/Pods-ConverterUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -158,6 +166,7 @@
 				16BB3A0620289C900067084C /* ConvertTableViewCell.swift */,
 				16323B102028A633008DFAE8 /* HistoryTableViewCell.swift */,
 				16EDE0C6202B4454006AE082 /* AboutTableViewCell.swift */,
+				857BB1522048651700E2C201 /* CalcTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -191,7 +200,7 @@
 				163B5CF120286A4700AA86EA /* AppDelegate.swift */,
 				4027ACD32028B36900985AF2 /* Controller */,
 				4027ACD22028B35C00985AF2 /* View */,
-				4027ACD12028B34000985AF2 /* Model */,
+				4027ACD12028B34000985AF2 /* Models */,
 				163B5D3B20288BB300AA86EA /* SWRevealViewController */,
 				163B5D2A2028854400AA86EA /* Images */,
 				163B5CFB20286A4700AA86EA /* Assets.xcassets */,
@@ -221,6 +230,7 @@
 		163B5D2220287EEC00AA86EA /* Pages */ = {
 			isa = PBXGroup;
 			children = (
+				857BB14F204862C000E2C201 /* Fractional Calculator */,
 				16753A43202ACB9400C9F578 /* About */,
 				4027ACD62028BDBD00985AF2 /* Converter */,
 				16323B0C2028A405008DFAE8 /* History */,
@@ -280,16 +290,13 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		4027ACD12028B34000985AF2 /* Model */ = {
+		4027ACD12028B34000985AF2 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				16E865EF2035C5C00016EC7A /* NumberConverter.swift */,
-				16E865E9203543BB0016EC7A /* DecimalToRadixConverter.swift */,
-				16E865EA203543BB0016EC7A /* RadixToDecimalConverter.swift */,
-				16E865ED2035C2290016EC7A /* Extensions.swift */,
-				40BCF7D12028CFDB006B0879 /* Convertion.swift */,
+				857BB14E2048628B00E2C201 /* Calculator */,
+				857BB14D2048627900E2C201 /* Converter */,
 			);
-			path = Model;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		4027ACD22028B35C00985AF2 /* View */ = {
@@ -316,6 +323,35 @@
 				16EDE0C8202B4A4D006AE082 /* ConverterViewController.swift */,
 			);
 			path = Converter;
+			sourceTree = "<group>";
+		};
+		857BB14D2048627900E2C201 /* Converter */ = {
+			isa = PBXGroup;
+			children = (
+				16E865EF2035C5C00016EC7A /* NumberConverter.swift */,
+				16E865E9203543BB0016EC7A /* DecimalToRadixConverter.swift */,
+				16E865EA203543BB0016EC7A /* RadixToDecimalConverter.swift */,
+				16E865ED2035C2290016EC7A /* Extensions.swift */,
+				40BCF7D12028CFDB006B0879 /* Convertion.swift */,
+			);
+			path = Converter;
+			sourceTree = "<group>";
+		};
+		857BB14E2048628B00E2C201 /* Calculator */ = {
+			isa = PBXGroup;
+			children = (
+				857BB15420486A6200E2C201 /* FractionClass.swift */,
+				857BB1562048718100E2C201 /* Digits.swift */,
+			);
+			path = Calculator;
+			sourceTree = "<group>";
+		};
+		857BB14F204862C000E2C201 /* Fractional Calculator */ = {
+			isa = PBXGroup;
+			children = (
+				857BB150204862E100E2C201 /* FractionalCalcViewController.swift */,
+			);
+			path = "Fractional Calculator";
 			sourceTree = "<group>";
 		};
 		BC7E1B4BD1B3FD9DFE359DD1 /* Frameworks */ = {
@@ -645,6 +681,8 @@
 				16EDE0C9202B4A4E006AE082 /* ConverterViewController.swift in Sources */,
 				163B5D29202880C800AA86EA /* MenuTableViewController.swift in Sources */,
 				163B5CF220286A4700AA86EA /* AppDelegate.swift in Sources */,
+				857BB1532048651700E2C201 /* CalcTableViewCell.swift in Sources */,
+				857BB1572048718100E2C201 /* Digits.swift in Sources */,
 				16323B112028A633008DFAE8 /* HistoryTableViewCell.swift in Sources */,
 				16323B0E2028A428008DFAE8 /* PreviousConvertTableViewCell.swift in Sources */,
 				163B5CFA20286A4700AA86EA /* Converter.xcdatamodeld in Sources */,
@@ -654,6 +692,8 @@
 				16EDE0C7202B4454006AE082 /* AboutTableViewCell.swift in Sources */,
 				163B5D432028913E00AA86EA /* HistoryTableViewController.swift in Sources */,
 				16EDE0CB202B4A70006AE082 /* AboutViewController.swift in Sources */,
+				857BB151204862E100E2C201 /* FractionalCalcViewController.swift in Sources */,
+				857BB15520486A6200E2C201 /* FractionClass.swift in Sources */,
 				40BCF7D22028CFDB006B0879 /* Convertion.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
