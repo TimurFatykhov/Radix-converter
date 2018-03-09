@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		16272AB52052792600A8DD5C /* orion_converter.png in Resources */ = {isa = PBXBuildFile; fileRef = 16272AB42052792600A8DD5C /* orion_converter.png */; };
 		16323B0E2028A428008DFAE8 /* PreviousConvertTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16323B0D2028A428008DFAE8 /* PreviousConvertTableViewCell.swift */; };
 		16323B112028A633008DFAE8 /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16323B102028A633008DFAE8 /* HistoryTableViewCell.swift */; };
 		16323B142028B1B1008DFAE8 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16323B132028B1B1008DFAE8 /* SWRevealViewController.m */; };
@@ -62,6 +63,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		16272AB42052792600A8DD5C /* orion_converter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = orion_converter.png; sourceTree = "<group>"; };
 		16323B0D2028A428008DFAE8 /* PreviousConvertTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviousConvertTableViewCell.swift; sourceTree = "<group>"; };
 		16323B102028A633008DFAE8 /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
 		16323B122028B1B1008DFAE8 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
@@ -250,6 +252,7 @@
 		163B5D2A2028854400AA86EA /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				16272AB42052792600A8DD5C /* orion_converter.png */,
 				16EDE0C4202B42C9006AE082 /* orion_menu-hamburger-2.png */,
 				16323B162028B1C3008DFAE8 /* orion_about.png */,
 				16323B152028B1C3008DFAE8 /* orion_calc.png */,
@@ -497,6 +500,7 @@
 				16323B1B2028B1C3008DFAE8 /* orion_menu-hamburger.png in Resources */,
 				16323B192028B1C3008DFAE8 /* orion_calc.png in Resources */,
 				163B5CF720286A4700AA86EA /* Main.storyboard in Resources */,
+				16272AB52052792600A8DD5C /* orion_converter.png in Resources */,
 				16EDE0C5202B42C9006AE082 /* orion_menu-hamburger-2.png in Resources */,
 				16323B1A2028B1C3008DFAE8 /* orion_about.png in Resources */,
 			);
