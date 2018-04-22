@@ -10,10 +10,10 @@ import Foundation
 
 
 class Fraction {
-    var numerator: Int = 0
-    var denominator: Int = 1
+    var numerator: Double = 0.0
+    var denominator: Double = 1.0
     
-    init(numerator: Int, denominator: Int) {
+    init(numerator: Double, denominator: Double) {
         self.numerator = numerator
         self.denominator = denominator
     }
@@ -48,50 +48,63 @@ class Fraction {
 //        return (numerator: numerator / divisor, denominator: denominator / divisor)
         
         let sign = numerator >= 0 ? 1:-1
-        var u = numerator * sign
+        var u = numerator * Double(sign)
         var v = denominator
         var r: Int
         while v != 0 {
-            r = u % v
+            r = Int(u.truncatingRemainder(dividingBy: v))
             u = v
-            v = r
+            v = Double(r)
         }
-        numerator /= u * sign
+        numerator /= u * Double(sign)
         denominator /= u
     }
     
     
-    func add(number: Fraction) -> Fraction {
-        var result: Fraction = Fraction()
-        result.numerator = numerator * number.denominator + number.numerator * denominator
-        result.denominator = denominator * number.denominator
-        result.reduce()
-        return result
+    func add(number: Fraction) {
+        self.numerator = numerator * number.denominator + number.numerator * denominator
+        self.denominator = denominator * number.denominator
+        self.reduce()
     }
     
-    func multiply(number: Fraction) -> Fraction {
-        var result: Fraction = Fraction()
-        result.numerator = numerator * number.numerator
-        result.denominator = denominator * number.denominator
-        result.reduce()
-        return result
+    func sqr() {
+        self.multiply(number: self.copy())
     }
     
-    func divide(number: Fraction) -> Fraction {
-        var result: Fraction = Fraction()
-        result.numerator = numerator * number.denominator
-        result.denominator = denominator * number.numerator
-        result.reduce()
-        return result
+    func multiply(number: Fraction){
+        self.numerator = numerator * number.numerator
+        self.denominator = denominator * number.denominator
+        self.reduce()
     }
     
-    func subtract(f: Fraction) -> Fraction {
-        var result: Fraction = Fraction()
-        result.numerator = numerator * f.denominator - denominator * f.numerator
-        result.denominator = denominator * f.denominator
-        result.reduce()
-        return result
+    func divide(number: Fraction) {
+		self.numerator = numerator * number.denominator
+        self.denominator = denominator * number.numerator
+        self.reduce()
     }
+    
+    func subtract(f: Fraction) {
+       	self.numerator = numerator * f.denominator - denominator * f.numerator
+        self.denominator = denominator * f.denominator
+        self.reduce()
+    }
+	
+	func revert() {
+		let temp: Double = self.denominator
+		self.denominator = self.numerator
+		self.numerator = temp
+	}
+	
+	func minus() {
+		self.multiply(number: Fraction(numerator: -1, denominator: 1))
+	}
+	
+	
+	
+	
+	func copy() -> Fraction {
+		return Fraction(numerator: self.numerator, denominator: self.denominator)
+	}
     
     
 }
